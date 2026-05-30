@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>NGO Information</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(-45deg,#00c9ff,#92fe9d,#36d1dc,#5b86e5);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+}
+
+.ngo-box{
+    width:750px;
+    margin:50px auto;
+    animation:fadeInUp 1s ease;
+}
+
+.card{
+    background:rgba(255,255,255,0.95);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+}
+
+.logo{
+    font-size:80px;
+    animation:floatIcon 3s ease-in-out infinite;
+}
+
+.info{
+    line-height:35px;
+}
+
+.info h1{
+    color:#333;
+    margin-bottom:10px;
+    animation:slideDown 1s ease;
+}
+
+.info h3{
+    color:#007bff;
+    margin-bottom:20px;
+}
+
+.info p{
+    color:#555;
+    font-size:16px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(0,123,255,0.5);
+}
+
+a{
+    text-decoration:none;
+}
+
+/* Background Animation */
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Card Animation */
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Heading Animation */
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* NGO Logo Floating */
+@keyframes floatIcon{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="ngo-box">
+
+<div class="card">
+
+<div class="logo">🏢</div>
+
+<div class="info">
+
+<h1>Helping Hands Foundation</h1>
+
+<h3>NGO Information</h3>
+
+<p>
+Helping Hands Foundation is a non-profit organization
+working for education, healthcare, social welfare,
+women empowerment and environmental protection.
+</p>
+
+<p>📧 Email : HelpingHandsFoundatioNgo@gmail.com</p>
+
+<p>📞 Phone : +91 1234567899</p>
+
+<p>📍 Address : Pune, Maharashtra</p>
+
+<p>
+🎯 Mission :
+To support underprivileged communities and improve
+their quality of life through education and healthcare.
+</p>
+
+<p>
+🌍 Vision :
+Creating a better society through empowerment,
+education and sustainable development.
+</p>
+
+<br>
+
+<a href="/dashboard">
+<button>
+⬅ Back Dashboard
+</button>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

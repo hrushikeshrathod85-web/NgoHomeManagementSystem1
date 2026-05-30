@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Login</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(-45deg,#36d1dc,#5b86e5,#89f7fe,#66a6ff);
+    background-size:400% 400%;
+    animation:bgAnimation 10s ease infinite;
+}
+
+.container{
+    width:400px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeInUp 1s ease;
+}
+
+h2{
+    color:#333;
+    margin-bottom:25px;
+    animation:slideDown 1s ease;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#007bff;
+    box-shadow:0 0 10px rgba(0,123,255,0.4);
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:translateY(-3px);
+}
+
+.register-link{
+    margin-top:15px;
+    display:block;
+    text-decoration:none;
+    color:#007bff;
+    font-weight:bold;
+}
+
+.register-link:hover{
+    color:#0056b3;
+}
+
+@keyframes bgAnimation{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="card">
+
+    <h2>🔐 Login Account</h2>
+
+    <form method="POST">
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Email"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Enter Password"
+               required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <a href="/register" class="register-link">
+        Create New Account
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>

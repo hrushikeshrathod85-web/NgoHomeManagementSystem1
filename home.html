@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>NGO Home Management System</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+    background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+    text-align:center;
+}
+
+.banner{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:zoomIn 1.5s ease;
+}
+
+h1{
+    color:white;
+    margin-top:20px;
+    font-size:45px;
+    animation:slideDown 1s ease;
+}
+
+.tagline{
+    color:white;
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.info-box{
+    background:rgba(255,255,255,0.95);
+    padding:30px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeInUp 1s ease;
+}
+
+.info-box h2{
+    color:#007bff;
+    margin-top:20px;
+}
+
+.info-box p{
+    color:#444;
+    line-height:30px;
+}
+
+.button-box{
+    margin-top:30px;
+}
+
+button{
+    padding:15px 30px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    background:#007bff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.1);
+    box-shadow:0 0 20px rgba(0,123,255,0.5);
+}
+
+a{
+    text-decoration:none;
+}
+
+/* Background Animation */
+
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Banner Animation */
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Heading Animation */
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Info Box Animation */
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+<img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200"
+     alt="NGO Banner"
+     style="width:100%;height:350px;border-radius:20px;">
+
+<h1>🏠 NGO Home Management System</h1>
+
+<p class="tagline">
+Empowering Communities Through Better Home Management
+</p>
+
+<div class="info-box">
+
+<h2>🏢 About NGO</h2>
+
+<p>
+Helping Hands Foundation is a non-profit organization
+working for education, healthcare, women empowerment,
+child welfare and environmental protection.
+</p>
+
+<h2>🎯 Mission</h2>
+
+<p>
+To support families and communities by providing
+effective home management services, education,
+healthcare support and social welfare programs.
+</p>
+
+<h2>🌍 Vision</h2>
+
+<p>
+Creating a better society where every family has
+access to resources, support and opportunities
+for growth and development.
+</p>
+
+</div>
+
+<div class="button-box">
+
+<a href="/register">
+<button>📝 Register</button>
+</a>
+
+<a href="/login">
+<button>🔐 Login</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

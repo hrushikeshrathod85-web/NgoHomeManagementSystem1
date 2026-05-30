@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>View Home Details</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+}
+
+.view-box{
+    width:95%;
+    margin:40px auto;
+    animation:fadeIn 1s ease;
+}
+
+.view-box h1{
+    color:white;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:40px;
+    animation:slideDown 1s ease;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:fadeInUp 1.2s ease;
+}
+
+th{
+    background:#007bff;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+    transition:0.3s;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.edit-btn{
+    background:green;
+}
+
+.edit-btn:hover{
+    background:darkgreen;
+    transform:scale(1.08);
+}
+
+.delete-btn{
+    background:red;
+}
+
+.delete-btn:hover{
+    background:darkred;
+    transform:scale(1.08);
+}
+
+.back-btn{
+    margin-top:20px;
+    background:#007bff;
+}
+
+.back-btn:hover{
+    background:#0056b3;
+    transform:scale(1.08);
+}
+
+a{
+    text-decoration:none;
+}
+
+/* Background Animation */
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Heading Animation */
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Table Animation */
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Page Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="view-box">
+
+<h1>🏠 Home Details</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Owner</th>
+<th>Address</th>
+<th>Members</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+
+{% for home in homes %}
+
+<tr>
+
+<td>{{ home[0] }}</td>
+<td>{{ home[1] }}</td>
+<td>{{ home[2] }}</td>
+<td>{{ home[3] }}</td>
+
+<td>
+<a href="/edit/{{ home[0] }}">
+<button class="edit-btn">
+✏️ Edit
+</button>
+</a>
+</td>
+
+<td>
+<a href="/delete/{{ home[0] }}">
+<button class="delete-btn">
+🗑 Delete
+</button>
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/dashboard">
+<button class="back-btn">
+⬅ Back Dashboard
+</button>
+</a>
+
+</div>
+
+</body>
+</html>
